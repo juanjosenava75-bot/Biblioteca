@@ -1,0 +1,6 @@
+# VS Code
+.vscode/
+
+# compilados Java
+bin/
+*.class
