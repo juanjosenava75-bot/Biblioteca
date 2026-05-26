@@ -1,6 +1,6 @@
 package biblioteca.dominio;
 
-public class Cd  extends Material implements IPrestable{
+public class Cd  extends Material {
 
     public Cd(String titulo, String autor) {
         super(titulo, autor);

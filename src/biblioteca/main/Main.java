@@ -33,11 +33,17 @@ public class Main {
     Usuario luis = new Usuario("Luis", "Perez", 4,23,35463747);
     Bibliotecario bibliotecario = new Bibliotecario("Juan", "Gonzalez",25,3465657);
 
+
+
+
+    
+
     // OBJETOS CONCRETOS
     Libro libro1 = new Libro("1984", "George Orwell");
     // bibliotecario.registrarMaterial(libro1);
 
     Libro libro2 = new Libro("El Principito", "Antoine de Saint-Exupéry");
+    
 
     // POLIMORFISMO
     // Guardamos un Libro en una variable de tipo Material
@@ -48,6 +54,7 @@ public class Main {
     // bibliotecario.registrarMaterial(revista1);
 
     Cd cd1 = new Cd("El Ritual", "Los Pericos");
+    Cd cd2 = new Cd("Thriller", "Michael jackson");
     // bibliotecario.registrarMaterial(cd1);
 
     // RELACIONES (asociación)
@@ -55,11 +62,18 @@ public class Main {
     b.agregarPersona(luis);
     b.agregarPersona(bibliotecario);
 
+  
+
     b.agregarMaterial(libro1);
     b.agregarMaterial(libro2);
     b.agregarMaterial(libro3);
     b.agregarMaterial(revista1);
     b.agregarMaterial(cd1);
+    b.agregarMaterial(cd2);
+
+    
+
+    
 
     // USO DE MÉTODOS (comportamiento)
 
@@ -79,11 +93,7 @@ public class Main {
     }
 
     // ESTADO GENERAL DEL SISTEMA
-     b.mostrarEstado();
-
-    
-    
-    
+     b.mostrarEstado();    
 
 
   }

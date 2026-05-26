@@ -1,6 +1,8 @@
 package biblioteca.dominio;
 
-public class Usuario extends Persona {
+import java.io.Serializable;
+
+public class Usuario extends Persona implements Serializable{
 
     private Material[] materialPrestados;// Relación 1 a N con Libro (un usuario puede tener varios libros prestados).
     private int cantidadMaterial = 0;
@@ -9,6 +11,12 @@ public class Usuario extends Persona {
         super(nombre, apellido, edad, dni);
         this.materialPrestados = new Material[maxLibros];
     }
+
+    
+
+   
+
+
 
     /**
      * Presta material si esta disponible

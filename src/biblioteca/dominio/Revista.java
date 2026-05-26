@@ -1,6 +1,6 @@
 package biblioteca.dominio;
 
-public class Revista extends Material  implements IPrestable{
+public class Revista extends Material {
 
     private int numero;
     

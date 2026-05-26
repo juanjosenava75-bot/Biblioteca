@@ -1,5 +1,7 @@
 package biblioteca.dominio;
 
+import java.io.Serializable;
+
 public class Persona implements Comparable<Persona> {
     protected String nombre;
     protected String apellido;

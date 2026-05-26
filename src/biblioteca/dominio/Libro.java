@@ -1,6 +1,6 @@
 package biblioteca.dominio;
 
-public class Libro extends Material implements IPrestable {
+public class Libro extends Material {
 
     
 

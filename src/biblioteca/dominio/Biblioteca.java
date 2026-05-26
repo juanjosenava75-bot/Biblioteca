@@ -31,16 +31,21 @@ public class Biblioteca {
     public void mostrarEstado() {
         System.out.println("Estado de la biblioteca:");
 
-        for (Material m : material) {
-           System.out.println(
-                    m.titulo + " - " + m.getEstado());  
-        } 
-        System.out.println("--------------------------------------------");
-       
-       
-        for (Persona p : personas) {
+         for (Persona p : personas) {
             p.mostrarMaterial();
         }
 
+    
+        System.out.println("--------------------------------------------");
+       
+       
+            for (Material m : material) {
+           System.out.println(
+                    m.titulo + " - " + m.getEstado());  
+        } 
+
     }
+
+    
+    
 }

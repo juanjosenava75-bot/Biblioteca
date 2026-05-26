@@ -1,10 +1,12 @@
 package biblioteca.dominio;
 
+import java.io.Serializable;
+
 /**
  * REpresenta un material dentro de la biblioteca 
  * puede ser prestado por los usuarios
  */
-public abstract class  Material {
+public abstract class  Material implements IPrestable {
     protected String titulo;
     protected String autor;
     private Estado estado;
@@ -31,6 +33,12 @@ public abstract class  Material {
 
     public void setEstado(Estado estado) {
         this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return  "Material: " + titulo + " - Autor: " + autor;
     }
     
 
