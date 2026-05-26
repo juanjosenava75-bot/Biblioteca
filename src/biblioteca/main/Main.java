@@ -32,6 +32,7 @@ public class Main {
     Usuario ana = new Usuario("Ana", "Ruiz", 3,22,3645364);
     Usuario luis = new Usuario("Luis", "Perez", 4,23,35463747);
     Bibliotecario bibliotecario = new Bibliotecario("Juan", "Gonzalez",25,3465657);
+    Usuario pedro = new Usuario("Pedro", "Lopez", 3, 20, 02451654);
 
 
 
@@ -61,6 +62,7 @@ public class Main {
     b.agregarPersona(ana);
     b.agregarPersona(luis);
     b.agregarPersona(bibliotecario);
+    b.agregarPersona(pedro);
 
   
 
