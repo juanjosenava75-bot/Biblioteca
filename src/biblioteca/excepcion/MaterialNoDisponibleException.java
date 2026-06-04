@@ -1,4 +1,4 @@
-package biblioteca.dominio;
+package biblioteca.excepcion;
 
 public class MaterialNoDisponibleException extends Exception {
 

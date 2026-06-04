@@ -6,7 +6,7 @@ import java.io.Serializable;
  * REpresenta un material dentro de la biblioteca 
  * puede ser prestado por los usuarios
  */
-public abstract class  Material implements IPrestable {
+public abstract class  Material implements IPrestable , Serializable {
     protected String titulo;
     protected String autor;
     private Estado estado;
@@ -40,6 +40,23 @@ public abstract class  Material implements IPrestable {
         // TODO Auto-generated method stub
         return  "Material: " + titulo + " - Autor: " + autor;
     }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+    
     
 
 }

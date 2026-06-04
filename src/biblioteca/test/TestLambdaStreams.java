@@ -23,9 +23,9 @@ public class TestLambdaStreams {
         // OBJETOS DEL DOMINIO
         // ============================
 
-        Usuario ana = new Usuario("Ana", "Ruiz", 3, 17, 4564537);
+        Usuario ana = new Usuario("Ana", "Ruiz", 17, 4564537);
 
-        Usuario luis = new Usuario("Luis", "Perez", 4, 25, 45645371);
+        Usuario luis = new Usuario("Luis", "Perez", 25, 45645371);
 
         Bibliotecario bibliotecario = new Bibliotecario(
                 "Juan",
@@ -36,7 +36,7 @@ public class TestLambdaStreams {
         Usuario p1 = new Usuario(
                 "Julio",
                 "Quintana",
-                3,
+                
                 34,
                 234344);
 
@@ -115,7 +115,7 @@ public class TestLambdaStreams {
         Supplier<Usuario> crearUsuario = () -> new Usuario(
                 "Nuevo",
                 "Usuario",
-                3,
+                
                 20,
                 324856);
 

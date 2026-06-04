@@ -1,20 +1,19 @@
 package biblioteca.dominio;
 
-import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Usuario extends Persona implements Serializable{
+import biblioteca.excepcion.MaterialNoDisponibleException;
 
-    private Material[] materialPrestados;// Relación 1 a N con Libro (un usuario puede tener varios libros prestados).
-    private int cantidadMaterial = 0;
+public class Usuario extends Persona  {
 
-    public Usuario(String nombre, String apellido, int maxLibros, int edad ,int dni ) {
+    private List <Material> materialPrestados;// Relación 1 a N con Libro (un usuario puede tener varios libros prestados).
+
+
+    public Usuario(String nombre, String apellido, int edad ,int dni ) {
         super(nombre, apellido, edad, dni);
-        this.materialPrestados = new Material[maxLibros];
+        this.materialPrestados = new ArrayList<>();
     }
-
-    
-
-   
 
 
 
@@ -26,7 +25,7 @@ public class Usuario extends Persona implements Serializable{
 
     public void prestarMaterial(Material material) throws MaterialNoDisponibleException {
 
-        if (cantidadMaterial < materialPrestados.length) {
+        
             if (material.getEstado() != Estado.DISPONIBLE){
                 
                 throw new MaterialNoDisponibleException("El material no esta disponible");
@@ -34,25 +33,26 @@ public class Usuario extends Persona implements Serializable{
 
             } else {
             
-
-            materialPrestados[cantidadMaterial] = material;
-            cantidadMaterial++;
-            // Cambiamos el estado del material
+            this.materialPrestados.add(material);
+           
             material.setEstado(Estado.PRESTADO);
             }
 
-        } else {
-
-            System.out.println(nombre + " no puede prestar más libros.");
-        }
+    
     }
 
     @Override
     public void mostrarMaterial() {
-        System.out.println("Libros prestados por " + nombre + ":");
-        for (int i = 0; i < cantidadMaterial; i++) {
-            materialPrestados[i].mostrarInfo();
+
+         System.out.println("--------------------------------------------");
+
+        System.out.println("Usuario  " + nombre + " Dni "+ dni + ":" );
+        System.out.println("Materiales prestados por " + nombre );
+
+        for (Material material : materialPrestados) {
+            material.mostrarInfo();
         }
+
         System.out.println("--------------------------------------------");
     }
 

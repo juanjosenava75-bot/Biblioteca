@@ -24,8 +24,8 @@ public class JavaCollectionFrameworkTest {
 
     public static void main(String[] args) {
 
-        Usuario ana = new Usuario("Ana", "Ruiz", 3, 24, 235456);
-        Usuario luis = new Usuario("Luis", "Perez", 4, 25, 38475656);
+        Usuario ana = new Usuario("Ana", "Ruiz", 24, 235456);
+        Usuario luis = new Usuario("Luis", "Perez", 25, 38475656);
 
         Bibliotecario bibliotecario = new Bibliotecario("Juan", "Gonzalez", 45, 273646);
 

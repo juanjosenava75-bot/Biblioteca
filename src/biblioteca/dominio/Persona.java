@@ -2,7 +2,7 @@ package biblioteca.dominio;
 
 import java.io.Serializable;
 
-public class Persona implements Comparable<Persona> {
+public abstract class Persona implements Comparable<Persona>,Serializable {
     protected String nombre;
     protected String apellido;
     protected int edad;
