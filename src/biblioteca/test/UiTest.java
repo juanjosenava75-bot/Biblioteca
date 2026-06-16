@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Container;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -21,9 +23,9 @@ public class UiTest {
 
 public static void main(String[] args) {
     //boxLayoutEjemplo();
-   // flowLayoutEjemplo();
+   flowLayoutEjemplo();
    //borderLayoutEjemplo();
-   menu();
+   //menu();
 
 }
 
@@ -47,6 +49,28 @@ public static void  flowLayoutEjemplo (){
 
         JButton botonAgregar = new JButton("Agregar Material");
         JButton botonListar = new JButton("Listar Materiales");
+        botonAgregar.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               System.out.println("Boton Agregar");
+            }
+            
+        });
+
+
+
+        botonListar.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              System.out.println("Boton Presionado con clase anonima");
+            }
+            
+        });
+
+
+        
 
         panel.add(botonAgregar);
         panel.add(botonListar);
@@ -57,7 +81,7 @@ public static void  flowLayoutEjemplo (){
 
 
     }
-
+  //BorderLayout  Divide en 5 regiones (N, S, E, O, Centro)
 public static void  borderLayoutEjemplo (){
 
      JFrame frame = new JFrame("BorderLayout Demo");
@@ -66,7 +90,7 @@ public static void  borderLayoutEjemplo (){
         Container contenedor = frame.getContentPane();
        
        
-        //BorderLayout  Divide en 5 regiones (N, S, E, O, Centro)
+      
          contenedor.setLayout(new BorderLayout());
         contenedor.add(new JButton("Norte"), BorderLayout.NORTH);
         contenedor.add(new JButton("Sur"), BorderLayout.SOUTH);
