@@ -26,7 +26,6 @@ public class PanelUsuarios extends JPanel implements ActionListener {
     private JButton botonGuardar;
     private JButton botonSalir;
     private TableUsuarioModel modelo;
-    private PanelManager manager;
     private Servicio<Persona> servicio;
     private int filaEditando = -1;
 
@@ -35,7 +34,6 @@ public class PanelUsuarios extends JPanel implements ActionListener {
         setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
         this.modelo = modelo;
-        this.manager = manager;
         this.servicio = new Servicio<>(new RepositorioArchivo<>("usuario.dat"));
 
         add(new JLabel("Nombre"));

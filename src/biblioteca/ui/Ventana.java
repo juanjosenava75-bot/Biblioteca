@@ -8,6 +8,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import biblioteca.dominio.EnumPanel;
+
 public class Ventana extends JFrame{
 
     private PanelManager panelManager;
@@ -23,16 +25,27 @@ public class Ventana extends JFrame{
         JMenuBar menuBar = new JMenuBar();
         JMenu menu = new JMenu ("Opciones");
 
+        JMenuItem itemPrincipal = new JMenuItem("Principal");
+        itemPrincipal.addActionListener(e-> panelManager.mostrarPanel(EnumPanel.PRINCIPAL));
+
         JMenuItem itemCrear = new JMenuItem("Crear Usuario");
-        itemCrear.addActionListener(e-> panelManager.mostrarFormulario());
+        itemCrear.addActionListener(e-> panelManager.mostrarPanel(EnumPanel.FORMULARIO_USUARIO));
 
         JMenuItem itemConsulta = new JMenuItem("Consulta Usuarios");
-        itemConsulta.addActionListener(e-> panelManager.mostrarTabla());
+        itemConsulta.addActionListener(e-> panelManager.mostrarPanel(EnumPanel.TABLA_USUARIO));
 
+          JMenuItem itemCrearMaterial = new JMenuItem("Ingreasar Material");
+        itemCrearMaterial.addActionListener(e-> panelManager.mostrarPanel(EnumPanel.FORMULARIO_MATERIAL));
+
+        JMenuItem itemTablaMaterial = new JMenuItem("Listar Materiales");
+        itemTablaMaterial.addActionListener(e-> panelManager.mostrarPanel(EnumPanel.TABLA_MATERIALES));
 
 
         menu.add(itemCrear);
         menu.add(itemConsulta);
+        menu.add(itemPrincipal);
+        menu.add(itemCrearMaterial);
+        menu.add(itemTablaMaterial);
 
         menuBar.add(menu);
         setJMenuBar(menuBar);

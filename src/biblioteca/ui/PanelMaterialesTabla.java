@@ -2,29 +2,28 @@ package biblioteca.ui;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
-import java.awt.Frame;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import biblioteca.dominio.EnumPanel;
-import biblioteca.dominio.Persona;
+import biblioteca.dominio.Material;
 
-public class PanelUsuarioTabla extends JPanel {
 
-    public PanelUsuarioTabla(TableUsuarioModel modelo, PanelManager manager) {
+public class PanelMaterialesTabla extends JPanel {
+
+
+     public PanelMaterialesTabla(TableMaterialesModel modelo, PanelManager manager) {
 
         setLayout(new BorderLayout());
 
         JTable tabla = new JTable(modelo);
 
         JPanel panelBotones = new JPanel();
+
         panelBotones.setLayout(new FlowLayout(FlowLayout.RIGHT));
         JButton botonEditar = new JButton("Editar");
         JButton botonEliminar = new JButton("Eliminar");
@@ -36,11 +35,11 @@ public class PanelUsuarioTabla extends JPanel {
             int fila = tabla.getSelectedRow();
 
             if (fila >= 0) {
-                manager.getServicio().listar().remove(fila);
-                manager.getServicio().getRepositorio().guardar(manager.getServicio().listar());
+                manager.getServicioMaterial().listar().remove(fila);
+                manager.getServicioMaterial().getRepositorio().guardar(manager.getServicioMaterial().listar());
                 modelo.fireTableDataChanged();
 
-                JOptionPane.showMessageDialog(null, "Usuario eliminado correctamente.");
+                JOptionPane.showMessageDialog(null, "Material eliminado correctamente.");
             }
         });
 
@@ -48,9 +47,9 @@ public class PanelUsuarioTabla extends JPanel {
             int fila = tabla.getSelectedRow();
 
             if (fila >= 0) {
-                Persona p = modelo.getPersonas().get(fila);
-                manager.mostrarPanel(EnumPanel.FORMULARIO_USUARIO);
-                manager.getPanelUsuarios().cargarUsuario(p, fila);
+                Material m = modelo.getMaterials().get(fila);
+                manager.mostrarPanel(EnumPanel.FORMULARIO_MATERIAL);
+                manager.getPanelMateriales().cargarMaterial(m, fila);
 
             }
 
@@ -59,15 +58,4 @@ public class PanelUsuarioTabla extends JPanel {
         add(new JScrollPane(tabla), BorderLayout.CENTER);
         add(panelBotones, BorderLayout.SOUTH);
     }
-
-    // public static void main(String[] args) {
-    // JFrame frame = new JFrame("Lista de Personas");
-
-    // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    // frame.setSize(400,200);
-
-    // frame.getContentPane().add(new PanelUsuarioTabla());
-    // frame.setVisible(true);
-
-    // }
 }
